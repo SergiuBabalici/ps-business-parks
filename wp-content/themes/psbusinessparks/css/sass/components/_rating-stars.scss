@@ -1,0 +1,34 @@
+.rating-star-holder {
+  margin-bottom: 10px;
+}
+
+.rating-stars {
+  $star-full-content: '\e801';
+  $star-empty-content: '\e800';
+  $content: '';
+  @for $index from 1 through 5 {
+    &-#{$index}.full {
+      &:before {
+        margin-left: -4px;
+        $full-stars: '';
+        @for $second_index from 1 through $index {
+          $full-stars: $full-stars + $star-full-content + '';
+        }
+        $content: $full-stars;
+        content: $content;
+        display: inline !important;
+      }
+    }
+    &-#{$index}.empty {
+      &:before {
+        $empty-stars: '';
+        @for $second_index from 1 through $index {
+          $empty-stars: $empty-stars + $star-empty-content + '';
+        }
+        $content: $empty-stars;
+        content: $content;
+        display: inline !important;
+      }
+    }
+  }
+}

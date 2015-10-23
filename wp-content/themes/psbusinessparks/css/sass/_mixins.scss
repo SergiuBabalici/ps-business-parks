@@ -1,0 +1,180 @@
+/*------------------------------------------------------------------
+  Media Queries
+  ------------------------------------------------------------------*/
+
+$desktop: '(min-width: 1200px)';
+$desktopSmall: '(min-width: 992px) and (max-width: 1199px)';
+$tablet: '(min-width: 768px) and (max-width: 991px)';
+$phone: '(max-width: 767px)';
+$phoneSmall: '(max-width: 480px)';
+$phoneCustom: '(max-width: 350px)';
+
+// Schedule widget custom media queries
+$desktopCustom: '(min-width: 1051px)';
+$tabletCustom: '(min-width: 803px) and (max-width: 1050px)';
+$tabletCustomSmall: '(min-width: 768px) and (max-width: 802px)';
+$tabletGeneral: '(min-width: 768px) and (max-width: 1050px)';
+
+@mixin respondTo($device) {
+  @if $device == desktop {
+    @media #{$desktop} {
+      @content;
+    }
+  }
+  @if $device == desktopSmall {
+    @media #{$desktopSmall} {
+      @content;
+    }
+  }
+  @if $device == desktopCustom {
+    @media #{$desktopCustom} {
+      @content;
+    }
+  }
+  @if $device == tablet {
+    @media #{$tablet} {
+      @content;
+    }
+  }
+   @if $device == tabletCustom {
+    @media #{$tabletCustom} {
+      @content;
+    }
+  }
+   @if $device == tabletCustomSmall {
+    @media #{$tabletCustomSmall} {
+      @content;
+    }
+  }
+  @if $device == tabletGeneral {
+    @media #{$tabletGeneral} {
+      @content;
+    }
+  }
+  @if $device == phone {
+    @media #{$phone} {
+      @content;
+    }
+  }
+  @if $device == phoneSmall {
+    @media #{$phoneSmall} {
+      @content;
+    }
+  }
+  @if $device == phoneCustom {
+    @media #{$phoneCustom} {
+      @content;
+    }
+  }
+}
+
+
+@mixin background-sizing ($attr) {
+  -webkit-background-size: $attr;
+  -moz-background-size: $attr;
+  -o-background-size: $attr;
+  background-size: $attr;
+}
+
+@mixin position-center-horizontally () {
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, 0); /* IE 9 */
+  -webkit-transform: translate(-50%, 0); /* Chrome, Safari, Opera */
+  transform: translate(-50%, 0);
+}
+
+@mixin border-radius ($attr) {
+  -webkit-border-radius: $attr;
+  -moz-border-radius: $attr;
+  border-radius: $attr;
+}
+
+@mixin user-select ($attr) {
+  -webkit-user-select: $attr;
+  -moz-user-select: $attr;
+  -ms-user-select: $attr;
+  user-select: $attr;
+}
+
+@mixin transition ($attr1, $ease1, $time1, $attr2, $ease2, $time2) {
+  -webkit-transition: $attr1 $ease1 $time1,$attr2 $ease2 $time2;
+  -o-transition: $attr1 $ease1 $time1,$attr2 $ease2 $time2;
+  transition: $attr1 $ease1 $time1,$attr2 $ease2 $time2;
+}
+
+@mixin box-shadow ($type, $shadow, $color) {
+  -webkit-box-shadow: $type $shadow $color;
+  -moz-box-shadow: $type $shadow $color;
+  box-shadow: $type $shadow $color;
+}
+
+@mixin font-family-gothic {
+  font-family: 'NewsGothicMT';
+}
+
+@mixin font-family-gothic-bold {
+  font-family: 'NewsGothicMT-Bold';
+}
+
+@mixin font-family-gothic-italic {
+   font-family: 'NewsGothicMT-Italic';
+}
+
+@mixin box-styles($bk: #fafafa,  $bcolor: #e0e0e0) {
+  background-color: $bk;
+  border-bottom: 1px solid $bcolor;
+  padding: 10px 20px;
+}
+
+@mixin input-styles {
+  box-shadow: none;
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+}
+
+
+@mixin link-styles($color: #e31b23) {
+  font-size: 12px;
+  line-height: 12px;
+  color: $color;
+}
+
+@mixin input-placeholder-styles($fs: 15px) {
+::-webkit-input-placeholder { 
+    font-size: $fs; 
+    line-height: 25px; 
+    color: $input-black; 
+
+    @include respondTo(phoneSmall) {
+      font-size: 11px;
+    }
+  }
+  ::-moz-placeholder { 
+    font-size: $fs; 
+    line-height: 25px; 
+    color: $input-black;
+
+    @include respondTo(phoneSmall) {
+      font-size: 11px;
+    }
+  } /* firefox 19+ */
+  :-ms-input-placeholder { 
+    font-size: $fs; 
+    line-height: 25px; 
+    color: $input-black; 
+
+    @include respondTo(phoneSmall) {
+      font-size: 11px;
+    }
+  } /* ie */
+  input:-moz-placeholder { 
+    font-size: $fs; 
+    line-height: 25px; 
+    color: $input-black;
+    
+    @include respondTo(phoneSmall) {
+      font-size: 11px;
+    }
+  }
+}

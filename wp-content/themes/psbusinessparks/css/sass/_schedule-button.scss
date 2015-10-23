@@ -1,0 +1,596 @@
+.schedule-content-block {
+	position: relative;
+	.popover {
+		font-family: 'NewsGothicMT', Arial, sans-serif;
+		width: 420px!important;
+		max-width: none;
+		border: none;
+		top: 50px!important;
+		left: -25px!important;
+		box-shadow: none;
+		border: 1px solid $psb-light-grey;
+		padding: 0;
+
+		@include respondTo(phone) {
+			top: 60px!important;
+			left: -208px!important;
+		}
+
+		@include respondTo(phoneSmall) {
+			left: -78px!important;
+			width: 290px!important;
+		}
+
+		span {
+			margin: 15px 0;
+			@include respondTo(phone) {
+				text-align: left!important;
+				display: inline-block!important;
+			}
+		}
+		&.bottom {
+			>.arrow {
+				top: -10px;
+				left: 93%!important;
+				&:after {
+					border-bottom-color: $psb-red;
+				}
+			}
+		}
+		.content2,
+		.content3,
+		.content4 {
+			display: none;
+		}
+		.search-box {
+			padding: 10px 17px;
+		}
+		&.step-2 {
+			.content1,
+			.content3,
+			.content4 {
+				display: none;
+			}
+			.content2 {
+				display: block;
+				.search-box {
+					@include box-styles($bk: #f8f8f8);
+				}
+			}
+		}
+		&.step-3,
+		&.step-4 {
+    	@include respondTo(desktopCustom) {
+    		width: 1022px!important;
+    		left: -159%!important;
+    	}
+    	@include respondTo(tabletCustom) {
+    		width: 772px !important;
+    		left: -96% !important;
+    	}
+    	@include respondTo(tabletCustomSmall) {
+    		width: 740px !important;
+    		left: -99% !important;
+    	}
+    	>.arrow {
+    		display: none;
+    	}
+		}
+		&.step-3 {
+			.content1,
+			.content2,
+			.content4 {
+				display: none;
+			}
+			.content3 {
+				display: block;
+				h1 {
+					@include box-styles;
+				}
+				.bottom-wrap {
+					@include box-styles($bk: #fafafa);
+					border-top: 1px solid $psb-light-grey;
+					a {
+						font-size: 12px;
+						line-height: 14px;
+						padding: 14px 15px 10px 15px;
+					}
+				}
+			}
+			input[type="text"] {
+				width: 100%;
+			}
+		}
+		&.step-4 {
+			.content1,
+			.content2,
+			.content3 {
+				display: none;
+			}
+			.content4 {
+				display: block;
+			}
+		}
+		// search results block
+		.search-results {
+			a {
+				span {
+					&:first-child {
+						margin-right: 0;
+					}
+				}
+			}
+			.text-center {
+				padding: 15px 0;
+				span {
+					@include respondTo(phoneSmall) {
+						margin-bottom: 0;
+					}
+				}
+			}
+			&,
+			.search-block {
+				a {
+					&:hover {
+						span {
+							color: $psb-red-hover;
+						}
+					}
+					span {
+						font-size: 12px;
+						color: $psb-red;
+						text-transform: uppercase;
+						@include font-family-gothic-bold;
+					}
+				}
+			}
+		}
+		.search-block {
+			overflow: auto;
+			padding: 20px 18px;
+			border-bottom: 1px solid $psb-light-grey;
+			.left-side,
+			.right-side {
+				float: left;
+			}
+			a {
+				display: inline-block;
+			}
+			span {
+				color: $psb-black;
+				margin: 0;
+			}
+			.left-side {
+				width: 73%;
+				.title {
+					margin: 0 0 5px 0;
+				}
+				.title,
+				span {
+					font-size: 16px;
+					line-height: 18px;
+					@include font-family-gothic-bold;
+				}
+				a {
+					font-size: 11px;
+					padding: 8px 15px;
+					@include border-radius(5px);
+					@include respondTo(phoneSmall) {
+						font-size: 10px;
+					}
+				}
+				span {
+					display: block;
+					margin: 15px 0;
+				}
+			}
+			.right-side {
+				width: 27%;
+				>span {
+					float: right;
+					@include respondTo(phoneSmall) {
+						font-size: 12px;
+						line-height: 14px;
+					}
+				}
+				a {
+					position: relative;
+					bottom: -92px;
+					@include respondTo(phone) {
+						bottom: -55px;
+					}
+					@include respondTo(phoneSmall) {
+						bottom: 0;
+						margin-left: 5px;
+					}
+					span {
+						display: inline-block;
+						vertical-align: middle;
+						&:first-child {
+							font-size: 11px;
+							line-height: 30px;
+							float: left;
+							@include respondTo(phoneSmall) {
+								font-size: 9px;
+								line-height: 12px;
+								float: none;
+							}
+						}
+						&:last-child {
+							font-size: 25px;
+							@include respondTo(phoneSmall) {
+								display: none!important;
+							}
+						}
+					}
+				}
+			}
+		}
+		// step 3 content
+		.step3-content {
+			overflow: auto;
+    	padding: 15px 5px;
+    	textarea,
+    	input,
+    	select {
+    		@include input-styles;
+    	}
+    	textarea,
+    	select {
+    		width: 100%;
+    	}
+    	textarea {
+    		resize: none;
+    		@include border-radius(4px);
+    	}
+    	input[type="text"] {
+    		&.open-datepicker {
+	    		@include border-radius(0);
+	    	}
+    	}
+    	.input-group-addon {
+    		border: 1px solid $psb-light-grey;
+    		border-left: 0;
+    		@include respondTo(phone) {
+    			width: 40px;
+    			height: 40px;
+    			line-height: 32px;
+
+    		}
+    	}
+    	.bootstrap-datetimepicker-widget {
+    		top: 35px!important;
+    		@include respondTo(phone) {
+    			left: 0!important;
+    		}
+    		.btn-primary {
+    			background-color: $psb-red;
+    			border: none;
+    			line-height: 20px;
+    		}
+    		table {
+    			td {
+    				span.icon-chevron-up,
+    				span.icon-chevron-down {
+							@include respondTo(phone) {
+								padding-left: 20px;
+							}
+    				}
+	    			span {
+	    				@include respondTo(phone) {
+	    					padding-left: 15px;
+	    				}
+	    			}
+    			}
+    		}
+    	}
+    	.input-group {
+    		.icon-chevron-right,
+    		.icon-chevron-left {
+    			display: inline-block;;
+    			line-height: 15px;
+    			height: 25px;
+    		}
+    		@include respondTo(phone) {
+    			input[type="text"] {
+	    			width: 80%;
+	    			margin-right: 0;
+	    		}
+    		}
+    		@include respondTo(phone) {
+    			width: 112%;
+    		}
+    		@include respondTo(phoneSmall) {
+    			width: 105%;
+    		}
+    	}
+    	.bootstrap-select {
+    		button {
+					border: 1px solid $psb-light-grey;
+				}
+    		span {
+    			margin: 0;
+    			@include respondTo(phoneSmall) {
+    				font-size: 11px;
+    				line-height: 22px;
+    			}
+    		}
+    		&.btn-group {
+    			.dropdown-menu {
+    				z-index: 1;
+    			}
+    		}
+    		&:last-of-type {
+    			display: none;
+    		}
+    	}
+    	>p {
+    		font-size: 13px;
+    		line-height: 25px;
+    		@include font-family-gothic-bold;
+    	}
+    	.left-side {
+    		p {
+    			font-size: 13px;
+    			line-height: 30px;
+    			@include font-family-gothic-bold;
+    		}
+    	}
+    	.details-block {
+    		.title,
+    		span {
+    			@include font-family-gothic-bold;
+    		}
+    		.title,
+    		p {
+    			margin-bottom: 5px;
+    		}
+    		.title {
+    			font-size: 18px;
+    			line-height: 20px;
+    		}
+    		span {
+    			font-size: 16px;
+    			line-height: 18px;
+    			color: $psb-black;
+    			margin: 20px 0 0 0;
+    		}
+    		p {
+    			font-size: 15px;
+    			line-height: 18px;
+    		}
+    		a {
+    			display: block;
+    			font-size: 13px;
+    			line-height: 15px;
+    			color: $psb-red;
+    			margin: 15px 0;
+    			text-decoration: underline;
+    		}
+    	}
+		}
+		// step4
+		.content4 {
+			overflow: auto;
+			padding: 35px 5px 100px 5px;
+			span {
+				margin: 0;
+				color: $psb-black;
+			}
+			h1,
+			.title,
+			.appointment-box span,
+			.wrap-content p {
+				@include font-family-gothic-bold;
+			}
+			h1 {
+				color: $psb-blue;
+				font-size: 26px;
+				line-height: 28px;
+				margin-bottom: 5px;
+				@include respondTo(phone) {
+					font-size: 18px;
+					line-height: 20px;
+				}
+			}
+			.left-side {
+				>p,
+				p.title {
+					font-size: 18px;
+					line-height: 20px;
+				}
+				>p {
+					margin-bottom: 20px;
+				}
+				.title {
+					margin-bottom: 5px;
+				}
+				.details-box,
+				.appointment-box {
+					margin-bottom: 20px;
+					p:not(.title),
+					span {
+						font-size: 15px;
+						line-height: 20px;
+					}
+				}
+				.appointment-box {
+					span {
+						@include respondTo(phone) {
+							margin: 0!important;
+						}
+					}
+				}
+				ul {
+					margin-top: 25px;
+					@include respondTo(phone) {
+						margin: 15px 0;
+					}
+					a {
+						display: block;
+					}
+				}
+			}
+			.right-side {
+				@include respondTo(desktopCustom) {
+					padding-right: 75px;
+				}
+				>img {
+					margin-bottom: 10px;
+				}
+			}
+			.question-box {
+				overflow: auto;
+				border: 1px solid $psb-grey;
+				@include border-radius(5px);
+				padding: 15px 10px 15px 20px;
+				margin-bottom: 15px;
+
+				@include respondTo(tabletGeneral) {
+					padding: 15px 10px;
+				}
+
+				img,
+				.wrap-content {
+					float: left;
+				}
+				img {
+					width: 55px;
+					margin-top: 5px;
+				}
+				.wrap-content {
+					width: 80%;
+					padding-left: 20px;
+					@include respondTo(tabletGeneral) {
+						width: 78%;
+						padding-left: 10px;
+					}
+					@include respondTo(phoneSmall) {
+						width: 100%;
+						padding-left: 0;
+						margin-top: 10px;
+					}
+					a {
+						span {
+							@include respondTo(tabletGeneral) {
+								font-size: 10px;
+							}
+							@include respondTo(phoneSmall) {
+								font-size: 10px;
+							}
+						}
+					}
+					p {
+						font-size: 18px;
+						line-height: 20px;
+						margin-bottom: 10px;
+					}
+				}
+			}
+			.read-more-box {
+				.title,
+				p {
+					margin-bottom: 5px;
+				}
+				.title {
+					font-size: 16px;
+					line-height: 18px;
+				}
+			}
+			a {
+				&:hover {
+					span {
+						color: $psb-red-hover;
+					}
+				}
+				span {
+					@include link-styles;
+					text-transform: uppercase;
+					@include font-family-gothic-bold;
+				}
+			}
+		}
+	}
+	.popover-title,
+	.close-btn {
+		color: $psb-white;
+	}
+	.popover-title {
+		font-size: 26px;
+		background-color: $psb-red;
+		@include border-radius(0);
+		padding: 20px 10px 15px 18px;
+		@include respondTo(phoneSmall) {
+			font-size: 18px;
+			line-height: 28px;
+		}
+	}
+	.close-btn {
+		display: inline-block;
+		width: 32px;
+		height: 32px;
+		font-size: 30px;
+		line-height: 31px;
+		font-weight: bold;
+		border: 3px solid white;
+		@include border-radius(50px);
+		padding-left: 2px;
+		float: right;
+		cursor: pointer;
+
+		@include respondTo(phoneSmall) {
+			width: 25px;
+			height: 25px;
+			font-weight: normal;
+			font-size: 25px;
+			line-height: 25px;
+			border-width: 2px;
+		}
+	}
+	.popover-content {
+		padding: 0;
+		h1 {
+			font-size: 22px;
+			margin-bottom: 5px;
+			@include respondTo(phoneSmall) {
+				font-size: 14px;
+				line-height: 16px;
+			}
+		}
+		.form-group {
+			width: 100%;
+		}
+		input {
+			height: 40px;
+		}
+		input[type="text"] {
+			width: 80%;
+			margin-right: 5px;
+			border: 1px solid $psb-light-grey;
+			@include border-radius(5px);
+			padding: 10px;
+			@include respondTo(phoneSmall) {
+				width: 71%;
+			}
+		}
+		@include input-placeholder-styles($fs: 15px);
+	}
+}
+.print-icon {
+  background: url('#{$relative_path_url}images/amenities/print.png') no-repeat 0 0;
+  width: 31px;
+  height: 27px;
+  display: block;
+}
+.email-icon {
+  background: url('#{$relative_path_url}images/amenities/email.png') no-repeat 0 0;
+  width: 27px;
+  height: 22px;
+  display: block;
+}
+.share-icon {
+  background: url('#{$relative_path_url}images/amenities/share.png') no-repeat 0 0;
+  width: 26px;
+  height: 26px;
+  display: block;
+}

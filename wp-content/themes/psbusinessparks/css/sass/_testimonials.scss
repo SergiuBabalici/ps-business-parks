@@ -1,0 +1,36 @@
+.testimonials-page {
+	margin-bottom: 140px;
+	h1 {
+		margin-bottom: 30px;
+	}
+	.red-btn {
+		font-size: 12px;
+		line-height: 14px;
+		padding: 15px 20px 10px 20px;
+		margin-top: 30px;
+	}
+}
+
+.testim-block {
+	margin-bottom: 30px;
+	.testim-content {
+		b,
+		span,
+		blockquote {
+			font-size: 14px;
+			line-height: 20px;
+		}
+		b,
+		span {
+			display: block;
+		}
+		span {
+			padding-left: 20px;
+		}
+		blockquote {
+			border-left: none;
+			margin-bottom: 10px;
+			padding: 0;
+		}
+	}
+}
